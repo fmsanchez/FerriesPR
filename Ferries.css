@@ -7,7 +7,7 @@ body{
 }
 .Header {
     background-color: white;
-    padding: 8px 0px 8px 110px;
+    padding: 8px 0px 8px 50px;
     display: block;
     margin-left: -8px;
     margin-top: -8px;
@@ -18,9 +18,18 @@ body{
     width: 600px;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 15px;
     margin-top: 60px;
+}
+.DataBlockSecond {
+    background-color: white;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 15px;
 }
+    
+
 #foto {
     position: absolute;
     margin-bottom: 200px;
@@ -33,7 +42,7 @@ body{
     padding-top: 10px;
 }
 
-td {
+#botonIdaVuelta td {
     background-color: #EBEBEB;
     padding: 5px;
     font-size: 20px;
@@ -41,7 +50,7 @@ td {
     width: 110px;
     text-align: center;
 }
-td:hover {
+#botonIdaVuelta td:hover {
     background-color: #3A516B;
     color: white;
 }
@@ -109,10 +118,53 @@ select {
 a {
     text-decoration: none;
 }
-input {
+.FechaInput {
     height: 20px;
     font-size: 20px;
     width: 120px;
     border-radius: 5px;
     padding: 2px;
+}
+
+.Header2 {
+    padding-left: 20px;
+    padding-top: 15px;
+}
+
+.InfoTable {
+    margin: auto;
+    font-size: 18px;
+    margin-top: -10px;
+}
+.InfoTable td {
+    padding: 5px;
+}
+.InfoTable input {
+    height: 20px;
+    margin-top: 5px;
+    font-size: 14px;
+    width: 150px;
+    border-radius: 5px;
+}
+.PagoTable {
+    margin: auto;
+    font-size: 18px;
+    margin-top: -10px;
+}
+.PagoTable td {
+    padding: 5px;
+}
+.PagoTable input {
+    height: 20px;
+    font-size: 14px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+#DireccionTable input {
+    width: 250px;
+}
+
+hr {
+    width: 500px;
+    align: center;
 }
