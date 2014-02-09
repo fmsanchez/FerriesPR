@@ -1,0 +1,118 @@
+* {
+    font-family: sans-serif;
+    color: #163F5E;
+}
+body{
+    background-color: #3295E1;
+}
+.Header {
+    background-color: white;
+    padding: 8px 0px 8px 110px;
+    display: block;
+    margin-left: -8px;
+    margin-top: -8px;
+    margin-right: -8px;
+}
+.DataBlock {
+    background-color: white;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    border-radius: 15px;
+}
+#foto {
+    position: absolute;
+    margin-bottom: 200px;
+    top: 30px;
+    z-index: -1;
+}
+#botonIdaVuelta {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+}
+
+td {
+    background-color: #EBEBEB;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 110px;
+    text-align: center;
+}
+td:hover {
+    background-color: #3A516B;
+    color: white;
+}
+
+#rutaSelector {
+    padding: 10px;
+    font-size: 20px;
+    display: inline-block;
+    width: 160px;
+    text-align: left;
+}
+
+#pasajeroDropdown {
+    font-size: 20px;
+    padding: 10px;
+    width: 160px;
+    display: inline-block;
+    text-align: right;
+
+}
+
+.Container {
+    width: 364px;
+    margin: auto;
+    padding: 3px;
+}
+
+select {
+    font-size: 20px;
+}
+
+#fechaIdaBox {
+    padding: 10px;
+    font-size: 20px;
+    display: inline-block;
+    width:160px;
+
+}
+#fechaRegresoBox {
+    padding: 10px;
+    font-size: 20px;
+    display: inline-block;
+    width: 160px;
+    text-align: right;
+}
+
+#horaIdaDropdown {
+    padding: 10px;
+    font-size: 20px;
+    display: inline-block;
+    width: 160px;
+}
+#horaRegresoDropdown {
+    padding: 10px;
+    font-size: 20px;
+    display: inline-block;
+    width: 160px;
+    text-align: right;
+}
+#continueButton {
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
+input {
+    height: 20px;
+    font-size: 20px;
+    width: 120px;
+    border-radius: 5px;
+    padding: 2px;
+}
