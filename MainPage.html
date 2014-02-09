@@ -2,79 +2,91 @@
 <html>
 
 <head>
+    <link type="text/css" rel="stylesheet" href="Ferries.css">
     <title>Ferries PR</title>
 </head>
 
 <body>
+    
+    <h1 class="Header">Ferries Puerto Rico</h1>
+    <div class="DataBlock">
 
-    <h1 style="color:white;background-color:blue; padding-left:70px">Ferries Puerto Rico</h1>
-    <div class="dataBlock" style="margin:0 auto; background-color:green; width:750px">
-        <div clas="BotonIdaVuelta" style="text-align:center">
-            <form action="">
-                <input type="button" value="     Ida     ">
-                <input type="button" value="Ida y vuelta">
-            </form>
+        <table id="botonIdaVuelta">
+            <tr>
+                <td>Ida</td>
+                <td>Ida y vuelta</td>
+            </tr>
+        </table>
+        <div class="Container">
+            <div id="rutaSelector">
+                Selecciona ruta<br>
+                    <select name="ruta">
+                        <option class="Element" value="FajardoCulebra">Fajardo &rarr; Culebra</option>
+                        <option class="Element" value="FajardoVieques">Fajardo &rarr; Vieques</option>
+                        <option class="Element" value="CulebraFajardo">Culebra &rarr; Fajardo</option>
+                        <option class="Element" value="ViequesFajardo">Vieques &rarr; Fajardo</option>
+                    </select>
+            </div>
+            <div class="Dropdown" id="pasajeroDropdown">
+                Pasajeros<br>
+
+                    <select name="pasajeros">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select> 
+            </div>
         </div>
-        <div class="Ruta">
-            Selecciona ruta
-            <form action="">
-                <select name="ruta">
-                    <option value="FajardoCulebra">Fajardo &rarr; Culebra</option>
-                    <option value="FajardoVieques">Fajardo &rarr; Vieques</option>
-                    <option value="CulebraFajardo">Culebra &rarr; Fajardo</option>
-                    <option value="ViequesFajardo">Vieques &rarr; Fajardo</option>
-                </select>
-            </form>
+        <div class="Container">
+            <div class="Textbox" id="fechaIdaBox">
+                Fecha de ida
+                <form name="input">
+                    <input class="FechaInput" type="text" name="fechaIda">
+                </form>
+            </div>
+
+            <div class="Textbox" id="fechaRegresoBox">
+                Fecha de regreso
+                <form name="inputR">
+                    <input class="FechaInput" type="text" name="fechaRegreso">
+                </form>
+            </div>
         </div>
-        <div class="Pasajeros">
-            N&uacute;mero de pasajeros
-            <form action="">
-                <select name="pasajeros">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                </select>
-            </form>
+        <div class="Container">
+            <div class="Dropdown" id="horaIdaDropdown">
+                Hora de ida
+                <form action="">
+                    <select name="horaIda">
+                        <option value="9">9:00am</option>
+                    </select>
+                </form>
+            </div>
+            <div class="Dropdown" id="horaRegresoDropdown">
+                Hora de regreso
+                <form action="">
+                    <select name="horaRegreso">
+                        <option value="9">9:30am</option>
+                    </select>
+                </form>
+            </div>
         </div>
-        <div class="FechaIda">
-            Fecha de ida
-            <form name="input">
-                <input type="text" name="fechaIda">
-            </form>
-        </div>
-        <div class="HoraIda">
-            Hora
-            <form action="">
-                <select name="horaIda">
-                    <option value="9">9:00am</option>
-                </select>
-            </form>
-        </div>
-        <div class="FechaRegreso">
-            Fecha de regreso
-            <form name="inputR">
-                <input type="text" name="fechaRegreso">
-            </form>
-        </div>
-        <div class="HoraRegreso">
-            Hora
-            <form action="">
-                <select name="horaRegreso">
-                    <option value="9">9:30am</option>
-                </select>
-            </form>
-        </div>
-        <div class="ContinueButton">
-            <form action"">
-                <input type="button" value="Continuar">
+        <div id="continueButton">
+            <a href="PaginaPago.html">
+                <table id="botonIdaVuelta">
+                    <tr>
+                        <td>Continuar</td>
+                    </tr>
+                </table>
+            </a>
         </div>
 
     </div>
+    <img id="foto" src="ferryPic.png">
     
 </body>
 
