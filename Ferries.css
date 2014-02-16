@@ -2,7 +2,7 @@
     font-family: sans-serif;
     color: #163F5E;
 }
-body{
+body {
     background-color: #3295E1;
 }
 .Header {
@@ -13,6 +13,7 @@ body{
     margin-top: -8px;
     margin-right: -8px;
 }
+
 .DataBlock {
     background-color: white;
     width: 600px;
@@ -27,32 +28,36 @@ body{
     margin-left: auto;
     margin-right: auto;
     border-radius: 15px;
-}
-    
-
+}   
 #foto {
     position: absolute;
     margin-bottom: 200px;
+    margin-left: -8px;
     top: 30px;
     z-index: -1;
 }
 #botonIdaVuelta {
     margin-left: auto;
     margin-right: auto;
-    padding-top: 10px;
 }
-
-#botonIdaVuelta td {
+.rutaSelected {
+    background-color: #3A516B;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 110px;
+    text-align: center;
+    color:white;
+    cursor: pointer;
+}
+.rutaNotSelected {
     background-color: #EBEBEB;
     padding: 5px;
     font-size: 20px;
     border-radius: 5px;
     width: 110px;
     text-align: center;
-}
-#botonIdaVuelta td:hover {
-    background-color: #3A516B;
-    color: white;
+    cursor: pointer;
 }
 
 #rutaSelector {
@@ -111,13 +116,40 @@ select {
     text-align: right;
 }
 #continueButton {
-    padding: 10px;
+    background-color: #EBEBEB;
+    padding: 5px;
     font-size: 20px;
     text-align: center;
+    border-radius: 5px;
+    width: 110px;
+    text-align: center;
+    cursor: pointer;
+
 }
+#continueButton:hover {
+    background-color: #3A516B;
+    color:white;
+}
+#confirmButton {
+    background-color: #EBEBEB;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    width: 110px;
+    text-align: center;
+    cursor: pointer;
+
+}
+#confirmButton:hover {
+    background-color: #3A516B;
+    color:white;
+}
+
 a {
     text-decoration: none;
 }
+
 .FechaInput {
     height: 20px;
     font-size: 20px;
@@ -167,4 +199,9 @@ a {
 hr {
     width: 500px;
     align: center;
+}
+
+.ConfirmMessage {
+    padding: 0px 40px 20px 40px;
+    font-size: 16px;
 }
