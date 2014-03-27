@@ -39,7 +39,6 @@
                 <div id="rutaSelector">
                     Selecciona ruta<br>
                         <select name="ruta" id="rutaDropdown">
-                            <option class="Element" value="null"></option>
                             <option class="Element" value="FajardoCulebra">Fajardo &rarr; Culebra</option>
                             <option class="Element" value="FajardoVieques">Fajardo &rarr; Vieques</option>
                             <option class="Element" value="CulebraFajardo">Culebra &rarr; Fajardo</option>
@@ -91,11 +90,12 @@
                 </div>
             </div>
             <div>
-                <!---<a href="PaginaPago.html" id="contClick">-->
-                    <table id="botonIdaVuelta">
-                            <td id="continueButton">Continuar</td>
-                    </table>
-                <!--</a>-->
+                <div id='ErrorMessage'>
+                </div>
+                <table id="botonIdaVuelta">
+                        <td id="continueButton">Continuar</td>
+                </table>
+
             </div>
             <br>
         </div>
@@ -123,12 +123,6 @@
                             Nombre
                             <form>
                                 <input type="text" name="primerNombre">
-                            </form>
-                        </td>
-                        <td>
-                            Segundo Nombre
-                            <form>
-                                <input type="text" name="segundoNombre">
                             </form>
                         </td>
                         <td>

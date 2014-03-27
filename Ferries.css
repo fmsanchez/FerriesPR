@@ -77,6 +77,14 @@ body {
 
 }
 
+#ErrorMessage {
+    color: red;
+    text-align: center;
+    position: relative;
+    top: -2px;
+    padding-bottom: 7px;
+}
+
 .Container {
     width: 364px;
     margin: auto;
@@ -205,3 +213,11 @@ hr {
     padding: 0px 40px 20px 40px;
     font-size: 16px;
 }
+
+
+
+
+
+
+
+
