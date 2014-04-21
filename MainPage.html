@@ -15,6 +15,12 @@
             $("#fechaCalendarRegreso").datepicker();
         });
     </script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">
+    // This identifies your website in the createToken call below
+    Stripe.setPublishableKey('pk_test_hPslm0Oim48c3hqcsKTP4v9d');
+    // ...
+    </script>
     <title>Ferries PR</title>
 </head>
 
@@ -25,11 +31,12 @@
 
     <div id="MainPage">
 
+
         <div class="DataBlock">
             <br>
             <table id="botonIdaVuelta">
                 <tr>
-                    <td id="botonIda" class="rutaNotSelected">Ida</td> 
+                    <td id="botonIda" class="rutaNotSelected">Ida</td>
                     <td id="botonVuelta" class="rutaSelected">Ida y vuelta</td>
 
                 </tr>
@@ -57,7 +64,7 @@
                             <option value="6">6</option>
                             <option value="7">7</option>
                             <option value="8">8</option>
-                        </select> 
+                        </select>
                 </div>
             </div>
             <div class="Container">
@@ -110,12 +117,12 @@
         <div class="DataBlock">
                 <h2 class="Header2">Costo</h2>
                 <table class="InfoTable" id="costosTable">
-                    
+
                 </table>
                 <br>
-            </div>
-            <hr>
-            <div class="DataBlockSecond">
+        </div>
+        <hr>
+        <div class="DataBlockSecond">
                 <h2 class="Header2">Informaci&oacute;n de contacto</h2>
                 <table class="InfoTable">
                     <tr>
@@ -132,7 +139,7 @@
                             </form>
                         </td>
                     </tr>
-               
+
                     <tr>
                         <td>
                             Correo electr&oacute;nico
@@ -149,81 +156,83 @@
                     </tr>
                 </table>
                 <br>
-            </div>
+        </div>
         <hr>
+        <form action="http://localhost:8000/handler.py" method="POST" id="payment-form">
             <div class="DataBlockSecond">
-                <h2 class="Header2">Informaci&oacute;n de pago</h2>
-                <table class="PagoTable">
-                    <tr>
-                        <td>
-                            <form>
-                                <input type="radio" name="tipoTarjeta" value="MasterCard">Master Card
-                                <input type="radio" name="tipoTarjeta" value="Visa">Visa
-                                <input type="radio" name="tipoTarjeta" value="Amex">Amex
-                            </form>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Nombre del titular de la tarjeta
-                            <form name="cardholderName">
-                                <input type="text" name="titularTarjeta">
-                            </form>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            N&uacute;mero de tarjeta
-                            <form name="cardNumber">
-                                <input type="text" name="numTarjeta">
-                            </form>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Fecha de expiraci&oacute;n
-                            <form action="">
-                                <select name="mesExpiracion">
-                                    <option value="1">Enero (01)</option>
-                                    <option value="2">Febrero (02)</option>
-                                    <option value="3">Marzo (03)</option>
-                                    <option value="4">Abril (04)</option>
-                                    <option value="5">Mayo (05)</option>
-                                    <option value="6">Junio (06)</option>
-                                    <option value="7">Julio (07)</option>
-                                    <option value="8">Agosto (08)</option>
-                                    <option value="9">Septiembre (09)</option>
-                                    <option value="10">Octubre (10)</option>
-                                    <option value="11">Noviembre (11)</option>
-                                    <option value="12">Diciembre (12)</option>
-                                </select>
-                                <select name="mesExpiracion">
-                                    <option value="2014">2014</option>
-                                    <option value="2015">2015</option>
-                                    <option value="2016">2016</option>
-                                    <option value="2017">2017</option>
-                                    <option value="2018">2018</option>
-                                    <option value="2019">2019</option>
-                                    <option value="2020">2020</option>
-                                    <option value="2021">2021</option>
-                                    <option value="2022">2022</option>
-                                    <option value="2023">2023</option>
-                                </select>
-                            </form>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            CCV
-                            <form name="CCV">
-                                <input type="text" name="codeCCV">
-                            </form>
-                        </td>
-                    </tr>
-                </table>
-                <br>
+
+                    <h2 class="Header2">Informaci&oacute;n de pago</h2>
+                    <table class="PagoTable">
+                        <tr>
+                            <td>
+                                <form>
+                                    <input type="radio" name="tipoTarjeta" value="MasterCard">Master Card
+                                    <input type="radio" name="tipoTarjeta" value="Visa">Visa
+                                    <input type="radio" name="tipoTarjeta" value="Amex">Amex
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Nombre del titular de la tarjeta
+                                <form name="cardholderName">
+                                    <input type="text" name="titularTarjeta">
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                N&uacute;mero de tarjeta <br>
+                                <input type="text" data-stripe="number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Fecha de expiraci&oacute;n (MM/AAAA) <br>
+                                <input type="text" maxlength="2" size="2" data-stripe="exp-month"/>
+                                <span> / </span>
+                                <input type="text" maxlength="4" size="4" data-stripe="exp-year"/>
+                                <!--<form action="">
+                                    <select name="mesExpiracion">
+                                        <option value="1">Enero (01)</option>
+                                        <option value="2">Febrero (02)</option>
+                                        <option value="3">Marzo (03)</option>
+                                        <option value="4">Abril (04)</option>
+                                        <option value="5">Mayo (05)</option>
+                                        <option value="6">Junio (06)</option>
+                                        <option value="7">Julio (07)</option>
+                                        <option value="8">Agosto (08)</option>
+                                        <option value="9">Septiembre (09)</option>
+                                        <option value="10">Octubre (10)</option>
+                                        <option value="11">Noviembre (11)</option>
+                                        <option value="12">Diciembre (12)</option>
+                                    </select>
+                                    <select name="mesExpiracion">
+                                        <option value="2014">2014</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                    </select>
+                                </form> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                CVC <br>
+                                <input type="text" size="4" data-stripe="cvc"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
             </div>
             <hr>
+            <!--
             <div class="DataBlockSecond">
                 <h2 class="Header2">Direcci&oacute;n de factura</h2>
                 <table class="PagoTable" id="DireccionTable">
@@ -278,14 +287,21 @@
                 </table>
                 <br>
             </div>
+            <br> -->
+
+                <!--<table id="botonIdaVuelta">-->
+                        <!--<td id="confirmButton">-->
+                        <div class="ButtonContainer">
+                            <button id="confirmButton" type="submit">Confirmar</button>
+                        </div>
+                        <!--</td>-->
+                <!--</table>-->
+
             <br>
-            <div>
-                <table id="botonIdaVuelta">
-                            <td id="confirmButton">Confirmar</td>
-                </table>
-            </div>
-            <br>
-        </div>
+        </form>
+
+
+    </div>
 
     <!-- Pagina Pago end -->
 
@@ -300,6 +316,36 @@
         </div>
     </div>
 
-    <img id="foto" src="ferryPic.png">   
+    <img id="foto" src="ferryPic.png">
 </body>
+
+
+<!--
+<form action="" method="POST" id="payment-form">
+  <span class="payment-errors"></span>
+
+  <div class="form-row">
+    <label>
+      <span>Card Number</span>
+      <input type="text" size="20" data-stripe="number"/>
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      <span>CVC</span>
+      <input type="text" size="4" data-stripe="cvc"/>
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      <span>Expiration (MM/YYYY)</span>
+      <input type="text" size="2" data-stripe="exp-month"/>
+    </label>
+    <span> / </span>
+    <input type="text" size="4" data-stripe="exp-year"/>
+  </div> -->
+
+
 </html>

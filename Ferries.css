@@ -28,7 +28,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     border-radius: 15px;
-}   
+}
 #foto {
     position: absolute;
     margin-bottom: 200px;
@@ -83,6 +83,12 @@ body {
     position: relative;
     top: -2px;
     padding-bottom: 7px;
+}
+
+.ButtonContainer {
+    width: 110px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .Container {
@@ -140,14 +146,14 @@ select {
 }
 #confirmButton {
     background-color: #EBEBEB;
-    padding: 5px;
     font-size: 20px;
     text-align: center;
     border-radius: 5px;
     width: 110px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     cursor: pointer;
-
 }
 #confirmButton:hover {
     background-color: #3A516B;
