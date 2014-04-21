@@ -10,7 +10,7 @@ form = cgi.FieldStorage()
 stripe.api_key = "sk_test_RZkRJdFi3icYHHqxjCM64UR2"
 
 # Get the credit card details submitted by the form
-token = form['stripeToken']
+token = form['stripeToken'].value
 
 # Create the charge on Stripe's servers - this will charge the user's card
 try:

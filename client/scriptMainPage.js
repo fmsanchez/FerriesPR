@@ -233,6 +233,7 @@ $(document).ready(function () {
         var form = $('#payment-form');
 
         // Disable the submit button to prevent repeated clicks
+
         form.find('button').prop('disabled', true);
 
         Stripe.card.createToken(form, stripeResponseHandler);

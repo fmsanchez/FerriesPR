@@ -189,11 +189,11 @@
                         <tr>
                             <td>
                                 Fecha de expiraci&oacute;n (MM/AAAA) <br>
-                                <input type="text" maxlength="2" size="2" data-stripe="exp-month"/>
+                                <!--<input type="text" maxlength="2" size="2" data-stripe="exp-month"/>
                                 <span> / </span>
                                 <input type="text" maxlength="4" size="4" data-stripe="exp-year"/>
-                                <!--<form action="">
-                                    <select name="mesExpiracion">
+                                <form action="">-->
+                                    <select name="mesExpiracion" data-stripe="exp-month">
                                         <option value="1">Enero (01)</option>
                                         <option value="2">Febrero (02)</option>
                                         <option value="3">Marzo (03)</option>
@@ -207,7 +207,7 @@
                                         <option value="11">Noviembre (11)</option>
                                         <option value="12">Diciembre (12)</option>
                                     </select>
-                                    <select name="mesExpiracion">
+                                    <select name="anoExpiracion" data-stripe="exp-year">
                                         <option value="2014">2014</option>
                                         <option value="2015">2015</option>
                                         <option value="2016">2016</option>
@@ -219,7 +219,6 @@
                                         <option value="2022">2022</option>
                                         <option value="2023">2023</option>
                                     </select>
-                                </form> -->
                             </td>
                         </tr>
                         <tr>
